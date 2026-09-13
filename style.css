@@ -1,0 +1,1500 @@
+/* =========================================================
+   NEW BALTIMORE // 2015
+   BATCH 2 — COMPLETE STYLE
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #e8e1d4;
+    color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.45;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --paper: #e8e1d4;
+    --paper-light: #f1ebdf;
+    --paper-dark: #d5ccbc;
+
+    --ink: #171717;
+    --muted: #66615a;
+
+    --black: #111111;
+    --white: #f5f3ed;
+
+    --lake: #4d6f73;
+    --lake-dark: #28474c;
+
+    --rust: #9b3e2f;
+    --rust-dark: #67251d;
+
+    --yellow: #d4a62a;
+
+    --school-red: #b51e2a;
+    --school-dark: #71141c;
+
+    --line: rgba(23, 23, 23, 0.22);
+
+    --max-width: 1400px;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+::selection {
+    background: var(--black);
+    color: var(--white);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.12;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.035) 0px,
+            rgba(0, 0, 0, 0.035) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+}
+
+.section {
+    width: min(var(--max-width), calc(100% - 60px));
+    margin: 0 auto;
+    padding: 130px 0;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 55px;
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.section-label::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: var(--line);
+}
+
+.section-label span:first-child {
+    color: var(--muted);
+}
+
+.eyebrow {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 50;
+
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.header-top {
+    width: min(var(--max-width), calc(100% - 60px));
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 28px 0 22px;
+}
+
+.site-mark {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+}
+
+.mark-small {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+}
+
+.mark-large {
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: 900;
+    letter-spacing: -0.08em;
+}
+
+.header-location {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+}
+
+.main-nav {
+    width: min(var(--max-width), calc(100% - 60px));
+    margin: 0 auto;
+
+    display: flex;
+    align-items: stretch;
+
+    border-top: 1px solid var(--line);
+}
+
+.main-nav a {
+    flex: 1;
+
+    padding: 14px 10px;
+
+    border-right: 1px solid var(--line);
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: center;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.main-nav a:first-child {
+    border-left: 1px solid var(--line);
+}
+
+.main-nav a:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 760px;
+
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 80px;
+
+    width: min(var(--max-width), calc(100% - 60px));
+    margin: 0 auto;
+
+    padding: 120px 0 100px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-copy {
+    align-self: end;
+}
+
+.hero h1 {
+    margin: 24px 0 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: clamp(76px, 12vw, 190px);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -0.095em;
+    text-transform: uppercase;
+}
+
+.hero h1 span:nth-child(2) {
+    margin-left: 7vw;
+}
+
+.hero h1 span:nth-child(3) {
+    margin-left: 15vw;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 35px;
+}
+
+.hero-meta span {
+    padding: 8px 11px;
+
+    border: 1px solid var(--ink);
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.hero-side {
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero-note {
+    padding: 18px;
+
+    border: 1px solid var(--ink);
+    background: var(--paper-light);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.note-label {
+    margin-bottom: 7px;
+
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.hero-note strong {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.hero-note > span:last-child {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.intro-title h2,
+.section-heading h2,
+.relationships-header h2,
+.summer-header h2,
+.year-header h2 {
+    font-size: clamp(52px, 7vw, 100px);
+    font-weight: 900;
+    line-height: 0.86;
+    letter-spacing: -0.075em;
+}
+
+.intro-copy {
+    max-width: 600px;
+}
+
+.large-copy {
+    margin-bottom: 35px;
+
+    font-size: 25px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+}
+
+.intro-copy p + p {
+    margin-top: 22px;
+}
+
+.intro-copy p:not(.large-copy) {
+    color: #393733;
+}
+
+
+/* =========================================================
+   PEOPLE
+   ========================================================= */
+
+.people {
+    border-top: 1px solid var(--line);
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 80px;
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+.section-heading > p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.person-card {
+    position: relative;
+
+    min-height: 610px;
+
+    border: 1px solid var(--ink);
+    background: var(--paper-light);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.person-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 10px 10px 0 var(--black);
+}
+
+.person-number {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.person-image {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid var(--ink);
+
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.person-roman .person-image {
+    background: #777b72;
+}
+
+.person-tyler .person-image {
+    background: #58686b;
+}
+
+.person-future .person-image {
+    background: #c1b9aa;
+}
+
+.placeholder span {
+    padding: 9px 12px;
+    border: 1px solid currentColor;
+}
+
+.person-info {
+    padding: 25px;
+}
+
+.person-name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.person-name-row h3 {
+    font-size: 25px;
+    letter-spacing: -0.04em;
+}
+
+.person-name-row span {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+}
+
+.person-tag {
+    margin: 8px 0 20px;
+
+    color: var(--rust-dark);
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.person-info > p:not(.person-tag) {
+    color: #46423d;
+}
+
+.person-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-top: 25px;
+}
+
+.person-details span {
+    padding: 5px 7px;
+
+    border: 1px solid var(--line);
+
+    font-family: "Courier New", monospace;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PLACES
+   ========================================================= */
+
+.places {
+    background: var(--black);
+    color: var(--white);
+
+    width: 100%;
+    padding-left: max(30px, calc((100% - var(--max-width)) / 2));
+    padding-right: max(30px, calc((100% - var(--max-width)) / 2));
+}
+
+.places .section-label {
+    color: var(--white);
+}
+
+.places .section-label::after {
+    background: rgba(255,255,255,0.25);
+}
+
+.places-list {
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.place-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 220px;
+    gap: 40px;
+
+    padding: 38px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    transition: padding 0.2s ease;
+}
+
+.place-row:hover {
+    padding-left: 20px;
+}
+
+.place-number {
+    color: #777;
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+}
+
+.place-main h3 {
+    font-size: clamp(30px, 4vw, 55px);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+}
+
+.place-type {
+    margin: 10px 0 17px;
+
+    color: #9eaaa8;
+
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.place-main p:last-child {
+    max-width: 620px;
+
+    color: #bbb9b3;
+}
+
+.place-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    color: #777;
+
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+
+/* =========================================================
+   NIGHTS
+   ========================================================= */
+
+.nights {
+    background: var(--lake-dark);
+    color: var(--white);
+
+    width: 100%;
+    padding-left: max(30px, calc((100% - var(--max-width)) / 2));
+    padding-right: max(30px, calc((100% - var(--max-width)) / 2));
+}
+
+.nights .section-label::after {
+    background: rgba(255,255,255,0.25);
+}
+
+.night-feature {
+    min-height: 620px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.night-feature-main {
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.night-feature-main h2 {
+    font-size: clamp(75px, 11vw, 165px);
+    line-height: 0.75;
+    letter-spacing: -0.09em;
+}
+
+.night-feature-main > p:last-child {
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+}
+
+.night-feature-side {
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 25px;
+
+    color: #ccd6d4;
+}
+
+.night-feature-side p {
+    max-width: 380px;
+}
+
+.night-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    margin-top: 18px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.night-list div {
+    min-height: 120px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.night-list div:last-child {
+    border-right: 0;
+}
+
+.night-list span {
+    color: #809795;
+
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+}
+
+.night-list strong {
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   SUMMER
+   ========================================================= */
+
+.summer-header {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 80px;
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+.summer-header > p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.summer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.summer-card {
+    min-height: 290px;
+
+    padding: 30px;
+
+    border: 1px solid var(--ink);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.summer-card:nth-child(1) {
+    background: var(--rust);
+    color: var(--white);
+}
+
+.summer-card:nth-child(2) {
+    background: var(--yellow);
+}
+
+.summer-card:nth-child(3) {
+    background: var(--lake);
+    color: var(--white);
+}
+
+.summer-card:nth-child(4) {
+    background: var(--paper-light);
+}
+
+.summer-number {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.summer-card h3 {
+    margin-top: 40px;
+
+    font-size: 36px;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+}
+
+.summer-card p {
+    max-width: 450px;
+}
+
+
+/* =========================================================
+   SCHOOL / ABCC
+   ========================================================= */
+
+.school {
+    width: 100%;
+    padding-left: max(30px, calc((100% - var(--max-width)) / 2));
+    padding-right: max(30px, calc((100% - var(--max-width)) / 2));
+
+    background: var(--school-red);
+    color: var(--white);
+}
+
+.school .section-label {
+    color: var(--white);
+}
+
+.school .section-label::after {
+    background: rgba(255,255,255,0.3);
+}
+
+.school-banner {
+    min-height: 400px;
+
+    padding: 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    background: var(--white);
+    color: var(--school-red);
+
+    border: 8px solid var(--school-dark);
+}
+
+.school-banner-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.school-kicker {
+    margin-bottom: 20px;
+
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.school-banner h2 {
+    font-size: clamp(80px, 13vw, 190px);
+    font-weight: 900;
+    line-height: 0.72;
+    letter-spacing: -0.09em;
+}
+
+.school-banner-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.school-colors {
+    font-size: 16px;
+}
+
+.school-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    padding: 90px 0;
+}
+
+.section-label-small {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.school-intro .large-copy {
+    font-size: 29px;
+}
+
+.school-intro p + p {
+    margin-top: 22px;
+}
+
+.school-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.school-card {
+    min-height: 290px;
+
+    padding: 30px;
+
+    background: var(--school-dark);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.school-card:nth-child(even) {
+    background: var(--white);
+    color: var(--school-red);
+}
+
+.school-card-number {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.school-card h3 {
+    font-size: 38px;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+}
+
+.school-card p {
+    max-width: 480px;
+}
+
+
+/* =========================================================
+   2015
+   ========================================================= */
+
+.year {
+    background: var(--paper-light);
+    width: 100%;
+    padding-left: max(30px, calc((100% - var(--max-width)) / 2));
+    padding-right: max(30px, calc((100% - var(--max-width)) / 2));
+}
+
+.year-header {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 100px;
+    align-items: end;
+
+    margin-bottom: 80px;
+}
+
+.year-header > p {
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+}
+
+.year-item {
+    min-height: 170px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.year-item span {
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.year-item strong {
+    font-size: 25px;
+    letter-spacing: -0.04em;
+}
+
+.year-language {
+    margin-top: 18px;
+
+    padding: 28px;
+
+    background: var(--black);
+    color: var(--white);
+}
+
+.year-language span {
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.year-language p {
+    margin-top: 15px;
+
+    color: #c3c1bc;
+
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   RELATIONSHIPS
+   ========================================================= */
+
+.relationships {
+    overflow: hidden;
+}
+
+.relationships-header {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 100px;
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+.relationships-header > p {
+    color: var(--muted);
+}
+
+.relationship-board {
+    position: relative;
+
+    min-height: 650px;
+
+    border: 1px solid var(--ink);
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,0,0,0.04) 1px,
+            transparent 1px
+        );
+    background-size: 20px 20px;
+}
+
+.relationship-node {
+    position: absolute;
+    z-index: 3;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--ink);
+    background: var(--paper-light);
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+
+    box-shadow: 7px 7px 0 var(--black);
+}
+
+.node-roman {
+    top: 70px;
+    left: 18%;
+}
+
+.node-tyler {
+    top: 190px;
+    left: 44%;
+}
+
+.node-abcc {
+    top: 70px;
+    right: 16%;
+}
+
+.node-lake {
+    bottom: 90px;
+    left: 24%;
+}
+
+.node-town {
+    bottom: 70px;
+    right: 22%;
+}
+
+.relationship-line {
+    position: absolute;
+    z-index: 1;
+
+    height: 2px;
+
+    background: var(--ink);
+
+    transform-origin: left center;
+}
+
+.line-one {
+    width: 290px;
+    top: 180px;
+    left: 28%;
+    transform: rotate(18deg);
+}
+
+.line-two {
+    width: 250px;
+    top: 180px;
+    right: 25%;
+    transform: rotate(-18deg);
+}
+
+.line-three {
+    width: 270px;
+    bottom: 185px;
+    left: 30%;
+    transform: rotate(-20deg);
+}
+
+.line-four {
+    width: 260px;
+    bottom: 170px;
+    right: 27%;
+    transform: rotate(19deg);
+}
+
+.relationship-note {
+    position: absolute;
+    z-index: 5;
+
+    right: 30px;
+    bottom: 25px;
+
+    width: 230px;
+
+    padding: 18px;
+
+    border: 1px solid var(--ink);
+    background: var(--black);
+    color: var(--white);
+
+    transform: rotate(-2deg);
+}
+
+.relationship-note span {
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.relationship-note p {
+    margin-top: 10px;
+
+    color: #c7c4bd;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: var(--black);
+    color: var(--white);
+
+    padding: 100px max(30px, calc((100% - var(--max-width)) / 2)) 25px;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 100px;
+
+    padding-bottom: 100px;
+}
+
+.footer-label {
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.footer-main h2 {
+    margin-top: 15px;
+
+    font-size: clamp(100px, 16vw, 240px);
+    line-height: 0.7;
+    letter-spacing: -0.1em;
+}
+
+.footer-copy {
+    align-self: end;
+
+    color: #999;
+}
+
+.footer-copy p + p {
+    margin-top: 20px;
+}
+
+.footer-bottom {
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #777;
+
+    font-family: "Courier New", monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-side {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro-grid,
+    .school-intro {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .section-heading,
+    .summer-header,
+    .year-header,
+    .relationships-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .people-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .person-card:last-child {
+        grid-column: span 2;
+    }
+
+    .place-row {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .place-side {
+        grid-column: 2;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .night-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .night-feature-main {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .night-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .night-list div:nth-child(2) {
+        border-right: 0;
+    }
+
+    .night-list div:nth-child(-n+3) {
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .school-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+    }
+
+    .school-banner-right {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .year-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .section {
+        width: calc(100% - 30px);
+        padding: 85px 0;
+    }
+
+    .header-top,
+    .main-nav {
+        width: calc(100% - 30px);
+    }
+
+    .header-top {
+        align-items: flex-start;
+    }
+
+    .header-location {
+        display: none;
+    }
+
+    .main-nav {
+        overflow-x: auto;
+    }
+
+    .main-nav a {
+        min-width: 95px;
+    }
+
+    .hero {
+        width: calc(100% - 30px);
+        padding: 80px 0;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px, 18vw, 115px);
+    }
+
+    .hero h1 span:nth-child(2) {
+        margin-left: 4vw;
+    }
+
+    .hero h1 span:nth-child(3) {
+        margin-left: 8vw;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-side {
+        grid-template-columns: 1fr;
+    }
+
+    .people-grid,
+    .summer-grid,
+    .school-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .person-card:last-child {
+        grid-column: auto;
+    }
+
+    .person-card {
+        min-height: 540px;
+    }
+
+    .place-row {
+        grid-template-columns: 35px 1fr;
+        gap: 15px;
+    }
+
+    .place-main h3 {
+        font-size: 38px;
+    }
+
+    .night-feature-main,
+    .night-feature-side {
+        padding: 35px;
+    }
+
+    .night-feature-main h2 {
+        font-size: 70px;
+    }
+
+    .night-list {
+        grid-template-columns: 1fr;
+    }
+
+    .night-list div {
+        min-height: 100px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .night-list div:last-child {
+        border-bottom: 0;
+    }
+
+    .school {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .school-banner {
+        min-height: 300px;
+        padding: 30px;
+        border-width: 5px;
+    }
+
+    .school-banner h2 {
+        font-size: 75px;
+    }
+
+    .year {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .year-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .relationship-board {
+        min-height: 700px;
+    }
+
+    .relationship-node {
+        width: 105px;
+        height: 105px;
+        font-size: 9px;
+    }
+
+    .node-roman {
+        top: 55px;
+        left: 8%;
+    }
+
+    .node-tyler {
+        top: 190px;
+        left: 38%;
+    }
+
+    .node-abcc {
+        top: 55px;
+        right: 7%;
+    }
+
+    .node-lake {
+        bottom: 180px;
+        left: 9%;
+    }
+
+    .node-town {
+        bottom: 175px;
+        right: 8%;
+    }
+
+    .relationship-note {
+        right: 15px;
+        bottom: 15px;
+        width: 190px;
+    }
+
+    .footer-main {
+        gap: 60px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
